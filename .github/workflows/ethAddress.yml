@@ -1,0 +1,8 @@
+            - name: Generate Ethereum Address
+  # You may pin to the exact commit or the version.
+  # uses: cladular/generate-eth-address@5022cac6b5ef9fc5b83c6f3658af4d1ac58904cb
+  uses: cladular/generate-eth-address@v0.1.0
+  with:
+    # Source data used to generate the address (usually a public key)
+    data: 
+          
