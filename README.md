@@ -37,8 +37,8 @@ To get started with EsanSwap, clone the repository and explore the codebase. Con
 ```bash
 git clone https://github.com/Patrick-Ehimen/EsanSwap.git
 cd EsanSwap
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see the project in action.

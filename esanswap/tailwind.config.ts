@@ -1,20 +1,36 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
+// Tailwind CSS configuration object
 const config = {
+  // Enable dark mode class-based strategy
   darkMode: ["class"],
+  // Specify where to find content files for purging unused styles
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  // No prefix for utility classes
   prefix: "",
   theme: {
     container: {
+      // Center the container by default
       center: true,
+      // Set default padding for the container
       padding: "2rem",
       screens: {
+        // Custom container width for 2xl breakpoint
+        ss: "280px",
+        ssl: "360px",
+        ssm: "540px",
+        sm: "640px",
+        md: "768px",
+        md1: "912px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
+        // xxl: "1536px",
       },
     },
     extend: {
@@ -74,7 +90,8 @@ const config = {
       },
     },
   },
+  // Include Tailwind CSS animate plugin
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
