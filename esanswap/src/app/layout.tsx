@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter } from "@/fonts/font";
+import { encodeSansExpanded } from "@/fonts/font";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={encodeSansExpanded.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
