@@ -6,5 +6,16 @@ import BSC from "./navbar/BinanceSmartChain.svg";
 import ETH from "./navbar/Ethereum.svg";
 import Optimism from "./navbar/Optimism.svg";
 import Polygon from "./navbar/Polygon.svg";
+import SettingIcon from "./setting.svg";
 
-export { Logo, Arbitrum, Avalanche, Base, BSC, ETH, Optimism, Polygon };
+export {
+  Logo,
+  Arbitrum,
+  Avalanche,
+  Base,
+  BSC,
+  ETH,
+  Optimism,
+  Polygon,
+  SettingIcon,
+};
