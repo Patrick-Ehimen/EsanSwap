@@ -16,6 +16,7 @@ import Image from "next/image";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 import { SettingIcon } from "../../public/assets";
+import { Wallet } from "../../public/assets";
 
 export function ConnectWallet() {
   // State to track the visibility of settings
@@ -27,7 +28,9 @@ export function ConnectWallet() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">Connect</Button>
+        <Button variant="outline" className="">
+          <Image src={Wallet} alt="wallet" />
+        </Button>
       </SheetTrigger>
       <SheetContent>
         {/* Conditional rendering based on isSettingsOpen state */}

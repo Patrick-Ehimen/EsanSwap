@@ -12,6 +12,7 @@ import DevIcon2 from "./navbar/05-icon.svg";
 import DevIcon3 from "./navbar/01-icon.svg";
 import DevIcon4 from "./navbar/02-icon.svg";
 import DevIcon5 from "./navbar/03-icon.svg";
+import Wallet from "./navbar/Wallet.svg";
 
 export {
   Logo,
@@ -28,4 +29,5 @@ export {
   DevIcon3,
   DevIcon4,
   DevIcon5,
+  Wallet,
 };

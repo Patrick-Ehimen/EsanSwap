@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 import { ThemeProvider } from "@/context/theme-provider";
+import { NextUIProvider } from "@nextui-org/react";
+import { ModeToggle } from "@/components/ModeToggle";
 
 export const metadata: Metadata = {
   title: "EsanSwap",
@@ -25,8 +27,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <NextUIProvider>
+            <Navbar />
+            {children}
+            <ModeToggle />
+          </NextUIProvider>
         </ThemeProvider>
       </body>
     </html>
