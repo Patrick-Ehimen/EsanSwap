@@ -1,78 +1,78 @@
-import { Button } from "@/components/ui/button";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import { encodeSansExpanded } from "@/fonts/font";
-
-import { DevIcon3, DevIcon4, DevIcon5 } from "../../public/assets";
-import Link from "next/link";
-import Image from "next/image";
-
-const mintArr = [
-  {
-    id: 1,
-    img: DevIcon3,
-    title: "Liquidity Minting",
-    param: "Earn FTR rewards by staking assets for market making",
-    link: "/",
-  },
-  {
-    id: 2,
-    img: DevIcon4,
-    title: "Trading Minting",
-    param: "Successfully complete a trade to get a FTR airdrop",
-    link: "/",
-  },
-  {
-    id: 3,
-    img: DevIcon5,
-    title: "vFTR",
-    param: "Mint vFTR to earn more DoDo",
-    link: "/",
-  },
-];
+  ChevronDown,
+  Lock,
+  Activity,
+  Flash,
+  Server,
+  TagUser,
+  Scale,
+} from "../../constants/icons";
+import {
+  Link,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+} from "@nextui-org/react";
 
 export function MintHoverCard() {
+  const icons = {
+    chevron: <ChevronDown fill="currentColor" size={16} />,
+    scale: <Scale className="text-warning" fill="currentColor" size={30} />,
+    lock: <Lock className="text-success" fill="currentColor" size={30} />,
+    activity: (
+      <Activity className="text-secondary" fill="currentColor" size={30} />
+    ),
+    flash: <Flash className="text-primary" fill="currentColor" size={30} />,
+    server: <Server className="text-success" fill="currentColor" size={30} />,
+    user: <TagUser className="text-danger" fill="currentColor" size={30} />,
+  };
+
   return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <Button
-          variant="link"
-          className={`font-medium text-[16.6px] ${encodeSansExpanded.className}`}
-        >
+    <Dropdown>
+      <DropdownTrigger>
+        <div className="flex text-[18px] ml-4 cursor-pointer hover:text-gray-300 font-medium text-inherit">
           Minting
-        </Button>
-      </HoverCardTrigger>
-      <HoverCardContent className="w-80">
-        <div className="flex flex-col gap-4">
-          {mintArr.map((mint) => (
-            <Link
-              href={mint.link}
-              key={mint.id}
-              className="hover:bg-slate-800 dark:hover:bg-gray-600 p-3 rounded-sm"
-            >
-              <div className="">
-                <div className="flex">
-                  <div className="rounded-full bg-gray-700 p-2 mt-1">
-                    <Image src={mint.img} alt="img" />
-                    {/* <AvatarFallback>{mint.title[0]}</AvatarFallback> */}
-                  </div>
-                  <h4 className="text-sm my-2 mx-2 font-semibold  dark:text-white text-gray-600">
-                    {mint.title}
-                  </h4>
-                </div>
-                <div className="space-y-1 ml-[30px] px-3">
-                  <p className="text-sm text-gray-600 dark:text-[#d3d4e5]">
-                    {mint.param}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+          <div className="m-1">{icons.chevron}</div>
         </div>
-      </HoverCardContent>
-    </HoverCard>
+      </DropdownTrigger>
+
+      <DropdownMenu
+        aria-label="ACME features"
+        className="w-[340px]"
+        itemClasses={{
+          base: "gap-4",
+        }}
+      >
+        <DropdownItem
+          key="autoscaling"
+          description="Earn FTR rewards by staking assets for market making"
+          startContent={icons.scale}
+        >
+          <Link href="/">Liquidity Minting</Link>
+        </DropdownItem>
+        <DropdownItem
+          key="usage_metrics"
+          description="Successfully complete a trade to get a FTR airdrop."
+          startContent={icons.activity}
+        >
+          <Link href="/">Trading Minting</Link>
+        </DropdownItem>
+        <DropdownItem
+          key="production_ready"
+          description="Mint vFTR to earn more DoDo, vFTR to earn more DoDo"
+          startContent={icons.flash}
+        >
+          <Link href="/">vFTR</Link>
+        </DropdownItem>
+        <DropdownItem
+          key="99_uptime"
+          description="Stake FTR to earn more FTR, Stake and earn more %APY"
+          startContent={icons.server}
+        >
+          <Link href="/pages/stake">Staking</Link>
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
   );
 }

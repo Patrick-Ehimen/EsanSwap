@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { colors, nextui } from "@nextui-org/react";
 
 // Tailwind CSS configuration object
 const config = {
@@ -10,6 +11,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   // No prefix for utility classes
   prefix: "",
@@ -20,18 +22,15 @@ const config = {
       // Set default padding for the container
       padding: "2rem",
       screens: {
-        // Custom container width for 2xl breakpoint
         ss: "280px",
         ssl: "360px",
         ssm: "540px",
         sm: "640px",
         md: "768px",
-        md11: "820px",
         md1: "912px",
         lg: "1024px",
-        xl: "1280px",
-        "2xl": "1400px",
-        // xxl: "1536px",
+        xl: "1197px",
+        xxl: "1280px",
       },
     },
     extend: {
@@ -92,7 +91,15 @@ const config = {
     },
   },
   // Include Tailwind CSS animate plugin
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    nextui({
+      themes: {
+        light: { colors: { background: "hsl(0 0% 100%)" } },
+        dark: { colors: { background: "hsl(225.2 84% 4.9%)" } },
+      },
+    }),
+    require("tailwindcss-animate"),
+  ],
 } satisfies Config;
 
 export default config;
