@@ -8,7 +8,7 @@ export default function ThemeToggle() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <div className="flex mt-20 gap-28">
+    <div className="flex gap-5 mt-20 sm:gap-28">
       <div className="text-[13px]">Theme</div>
       <Button variant="outline" className="-mt-2 gap-5 hover:bg-transparent">
         {/* Auto Theme Toggle */}

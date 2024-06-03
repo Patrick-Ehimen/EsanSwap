@@ -13,6 +13,10 @@ import DevIcon3 from "./navbar/01-icon.svg";
 import DevIcon4 from "./navbar/02-icon.svg";
 import DevIcon5 from "./navbar/03-icon.svg";
 import Wallet from "./navbar/Wallet.svg";
+import MetamaskWallet from "./MetamaskWallet.svg";
+import PhantomWallet from "./PhantomWallet.svg";
+import CoinbaseWallet from "./CoinbaseWallet.svg";
+import WalletConnectWallet from "./WalletConnectWallet.svg";
 
 export {
   Logo,
@@ -30,4 +34,8 @@ export {
   DevIcon4,
   DevIcon5,
   Wallet,
+  MetamaskWallet,
+  PhantomWallet,
+  CoinbaseWallet,
+  WalletConnectWallet,
 };
