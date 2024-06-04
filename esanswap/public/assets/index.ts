@@ -17,6 +17,7 @@ import MetamaskWallet from "./MetamaskWallet.svg";
 import PhantomWallet from "./PhantomWallet.svg";
 import CoinbaseWallet from "./CoinbaseWallet.svg";
 import WalletConnectWallet from "./WalletConnectWallet.svg";
+import Arr from "./swapPage/ArrowIcon.svg";
 
 export {
   Logo,
@@ -38,4 +39,5 @@ export {
   PhantomWallet,
   CoinbaseWallet,
   WalletConnectWallet,
+  Arr,
 };
